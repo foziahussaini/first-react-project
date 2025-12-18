@@ -1,14 +1,26 @@
 import { useState } from 'react'
+import './App.css';
 import Header from "./component/Header";
 import Footer from "./component/footer";
-function App() {
-  const [count, setCount] = useState(0)
+import RegisterForm from './component/registerForm';
 
+function Button(){
+  const [submit, setSubmit]= useState();
+  return(
+      <button type='submit' className='submitBtn' onClick={(e)=> setSubmit(true)}>Submit</button>
+  );
+}
+
+function App() {
   return (
     <>
     <div className="app">
-       <Header/>
-       <Footer/>
+      <Header/>
+      <div className="form">
+        <RegisterForm/>
+        <Button/>
+      </div>
+      <Footer/>
     </div>
      
     </> 
